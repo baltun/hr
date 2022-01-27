@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Repositories;
 
@@ -21,7 +22,7 @@ class EloquentDepartmentRepository implements DepartmentRepositoryInterface
         $departmentModel->name = $departmentDTO->name;
 
         $departmentModel->save();
-        dd($departmentModel->id);
+
         return $departmentModel->id;
     }
 
@@ -33,5 +34,12 @@ class EloquentDepartmentRepository implements DepartmentRepositoryInterface
     public function change()
     {
 
+    }
+
+    private function fillDepartmentDTO(DepartmentModel $departmentModel)
+    {
+        $departmentDTO = new DepartmentDTO();
+        $departmentDTO->id = $departmentModel->id;
+        $departmentDTO->name = $departmentModel->name;
     }
 }

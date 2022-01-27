@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\DTO;
 
@@ -7,7 +8,7 @@ class DepartmentDTO
     public $id;
     public $name;
 
-    public function fromRequest($request)
+    public static function fromRequest($request)
     {
         $dto = new self();
         foreach ($dto as $name => $value) {

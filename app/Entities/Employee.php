@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Entities;
 
@@ -22,7 +23,7 @@ class Employee
         }
     }
 
-    public function removeDepartments($departments)
+    public function removeDepartment($departments)
     {
         foreach ($departments as $department) {
             $this->departments[] = $department;
