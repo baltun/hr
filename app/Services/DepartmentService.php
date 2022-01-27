@@ -21,7 +21,7 @@ class DepartmentService implements DepartmentServiceInterface
 
         $department = $this->departmentRepository->create($departmentDTO);
 
-        return $department;
+        return $department->id;
     }
 
     public function getById(int $id)
