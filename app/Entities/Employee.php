@@ -16,27 +16,41 @@ class Employee
         $this->name = $name;
     }
 
-    public function addDepartments($departments)
+    public function getId()
     {
-        foreach ($departments as $department) {
-            $this->departments[] = $department;
-        }
+        return $this->id;
     }
 
-    public function removeDepartment($departments)
-    {
-        foreach ($departments as $department) {
-            $this->departments[] = $department;
-        }
-    }
-
-    public function editName($name)
+    public function setName($name)
     {
         $this->name = $name;
     }
 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setDepartments($departments)
+    {
+        foreach ($departments as $department) {
+            $this->departments[] = $department;
+        }
+    }
+
+    public function getDepartments()
+    {
+        return $this->departments;
+    }
+
+
     public function setPhotoUrl($photoUrl)
     {
         $this->photoUrl = $photoUrl;
+    }
+
+    public function getPhotoUrl()
+    {
+        return $this->photoUrl;
     }
 }

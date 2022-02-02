@@ -7,4 +7,9 @@ class Position
 {
     private $id;
     public $name;
+
+    public function __construct($id = null, $name)
+    {
+
+    }
 }

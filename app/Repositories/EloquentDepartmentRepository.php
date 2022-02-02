@@ -23,7 +23,9 @@ class EloquentDepartmentRepository implements DepartmentRepositoryInterface
 
         $departmentModel->save();
 
-        return $departmentModel->id;
+        $departmentDTO->id = $departmentModel->id;
+
+        return $departmentDTO;
     }
 
     public function findById()
