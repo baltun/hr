@@ -1,88 +1,156 @@
 <?php
-declare(strict_types = 1);
 
 namespace App\Http\Controllers;
 
-use App\DTO\DepartmentDTO;
-use App\Interfaces\DepartmentServiceInterface;
+use App\Http\Requests\CreateDepartmentRequest;
+use App\Http\Requests\UpdateDepartmentRequest;
+use App\Repositories\DepartmentRepository;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Flash;
+use Response;
 
-class DepartmentController extends Controller
+class DepartmentController extends AppBaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /** @var  DepartmentRepository */
+    private $departmentRepository;
+
+    public function __construct(DepartmentRepository $departmentRepo)
     {
-        dd('index');
+        $this->departmentRepository = $departmentRepo;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the Department.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     *
+     * @return Response
      */
-    public function create(Request $request, DepartmentServiceInterface $departmentService)
+    public function index(Request $request)
     {
-        $departmentDTO = DepartmentDTO::fromRequest($request);
-        $departmentService->create($departmentDTO);
+        $departments = $this->departmentRepository->paginate(20);
+
+        return view('departments.index')
+            ->with('departments', $departments);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the form for creating a new Department.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function store(Request $request)
+    public function create()
     {
-        //
+        return view('departments.create');
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created Department in storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CreateDepartmentRequest $request
+     *
+     * @return Response
+     */
+    public function store(CreateDepartmentRequest $request)
+    {
+        $input = $request->all();
+
+        $department = $this->departmentRepository->create($input);
+
+        Flash::success('Department saved successfully.');
+
+        return redirect(route('departments.index'));
+    }
+
+    /**
+     * Display the specified Department.
+     *
+     * @param int $id
+     *
+     * @return Response
      */
     public function show($id)
     {
-        //
+        $department = $this->departmentRepository->find($id);
+
+        if (empty($department)) {
+            Flash::error('Department not found');
+
+            return redirect(route('departments.index'));
+        }
+
+        return view('departments.show')->with('department', $department);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Department.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     *
+     * @return Response
      */
     public function edit($id)
     {
-        //
+        $department = $this->departmentRepository->find($id);
+
+        if (empty($department)) {
+            Flash::error('Department not found');
+
+            return redirect(route('departments.index'));
+        }
+
+        return view('departments.edit')->with('department', $department);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Department in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @param UpdateDepartmentRequest $request
+     *
+     * @return Response
      */
-    public function update(Request $request, $id)
+    public function update($id, UpdateDepartmentRequest $request)
     {
-        //
+        $department = $this->departmentRepository->find($id);
+
+        if (empty($department)) {
+            Flash::error('Department not found');
+
+            return redirect(route('departments.index'));
+        }
+
+        $department = $this->departmentRepository->update($request->all(), $id);
+
+        Flash::success('Department updated successfully.');
+
+        return redirect(route('departments.index'));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Department from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     *
+     * @throws \Exception
+     *
+     * @return Response
      */
     public function destroy($id)
     {
-        //
+        $department = $this->departmentRepository->find($id);
+
+        if (empty($department)) {
+            Flash::error('Department not found');
+
+            return redirect(route('departments.index'));
+        }
+
+        $this->departmentRepository->delete($id);
+
+        Flash::success('Department deleted successfully.');
+
+        return redirect(route('departments.index'));
     }
 }
