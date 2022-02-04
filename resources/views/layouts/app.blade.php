@@ -27,10 +27,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="https://assets.infyom.com/logo/blue_logo_150x150.png" width="30" height="30"
-             alt="InfyOm Logo">
-        <img class="navbar-brand-minimized" src="https://assets.infyom.com/logo/blue_logo_150x150.png" width="30"
-             height="30" alt="InfyOm Logo">
+        HRMS
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
@@ -40,7 +37,7 @@
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="icon-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+{{--                <span class="badge badge-pill badge-danger">5</span>--}}
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -50,22 +47,32 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
-                    <strong>Account</strong>
+                    <strong>Access Role</strong>
                 </div>
                 <a class="dropdown-item" href="#">
-                    <i class="fa fa-envelope-o"></i> Messages
-                    <span class="badge badge-success">42</span>
+                    <i class="fa fa-envelope-o"></i> Admin
+{{--                    <span class="badge badge-success">42</span>--}}
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> Manager
+                    {{--                    <span class="badge badge-success">42</span>--}}
+                </a><a class="dropdown-item" href="#">
+                    <i class="fa fa-envelope-o"></i> User
+                    {{--                    <span class="badge badge-success">42</span>--}}
                 </a>
                 <div class="dropdown-header text-center">
                     <strong>Settings</strong>
                 </div>
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-user"></i> Profile</a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-wrench"></i> Settings</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-shield"></i> Lock Account</a>
+{{--                <a class="dropdown-item" href="#">--}}
+{{--                    <i class="fa fa-wrench"></i> Settings</a>--}}
+{{--                <div class="dropdown-divider"></div>--}}
+{{--                <a class="dropdown-item" href="#">--}}
+{{--                    <i class="fa fa-shield"></i> Lock Account</a>--}}
+                <div class="dropdown-header text-center">
+                    <strong>Exit</strong>
+                </div>
                 <a href="{{ url('/logout') }}" class="dropdown-item btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fa fa-lock"></i>Logout
@@ -74,6 +81,9 @@
                     @csrf
                 </form>
             </div>
+        </li>
+        <li class="d-md">
+            &nbsp;&nbsp;&nbsp;
         </li>
     </ul>
 </header>
@@ -86,8 +96,8 @@
 </div>
 <footer class="app-footer">
     <div>
-        <a href="https://infyom.com">InfyOm </a>
-        <span>&copy; 2019 InfyOmLabs.</span>
+        <a href="https://infyom.com">HRMS </a>
+        <span>&copy; 2022 Baltun7</span>
     </div>
     <div class="ml-auto">
         <span>Powered by</span>

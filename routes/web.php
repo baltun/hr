@@ -56,3 +56,9 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
+
+Route::resource('positions', App\Http\Controllers\PositionController::class);
+
+
+Route::resource('employees', App\Http\Controllers\EmployeeController::class);

@@ -7,3 +7,15 @@
         <span>Departments</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('positions*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('positions.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Positions</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('employees*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('employees.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Employees</span>
+    </a>
+</li>
