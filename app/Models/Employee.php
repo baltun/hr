@@ -9,11 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Employee
  * @package App\Models
- * @version February 4, 2022, 3:58 pm UTC
+ * @version February 4, 2022, 5:25 pm UTC
  *
+ * @property \App\Models\Department $department
  * @property string $lastName
  * @property string $firstName
  * @property string $middleName
+ * @property integer $department_id
  */
 class Employee extends Model
 {
@@ -28,7 +30,8 @@ class Employee extends Model
     public $fillable = [
         'lastName',
         'firstName',
-        'middleName'
+        'middleName',
+        'department_id'
     ];
 
     /**
@@ -39,7 +42,8 @@ class Employee extends Model
     protected $casts = [
         'lastName' => 'string',
         'firstName' => 'string',
-        'middleName' => 'string'
+        'middleName' => 'string',
+        'department_id' => 'integer'
     ];
 
     /**
@@ -51,5 +55,11 @@ class Employee extends Model
         
     ];
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function department()
+    {
+        return $this->belongsTo(\App\Models\Department::class, 'department_id', 'id');
+    }
 }

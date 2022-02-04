@@ -70,5 +70,11 @@
         "inForm": false,
         "inIndex": false,
         "inView": true
+    },
+    {
+        "name": "department_id",
+        "dbType": "biginteger:unsigned:foreign,departments,id",
+        "htmlType": "text",
+        "relation": "mt1,Department,department_id,id"
     }
 ]

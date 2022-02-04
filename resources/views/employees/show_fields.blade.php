@@ -28,3 +28,9 @@
     <p>{{ $employee->updated_at }}</p>
 </div>
 
+<!-- Department Id Field -->
+<div class="form-group">
+    {!! Form::label('department_id', 'Department Id:') !!}
+    <p>{{ $employee->department_id }}</p>
+</div>
+
