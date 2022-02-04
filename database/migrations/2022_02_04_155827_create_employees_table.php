@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->string('lastName');
             $table->string('firstName');
             $table->string('middleName');
-            $table->biginteger('department_id')->unsigned();
+            $table->biginteger('department_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('department_id')->references('id')->on('departments');
         });

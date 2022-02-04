@@ -73,7 +73,7 @@
     },
     {
         "name": "department_id",
-        "dbType": "biginteger:unsigned:foreign,departments,id",
+        "dbType": "biginteger:unsigned:nullable:foreign,departments,id",
         "htmlType": "text",
         "relation": "mt1,Department,department_id,id"
     }
