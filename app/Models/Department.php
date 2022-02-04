@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Department
  * @package App\Models
- * @version February 3, 2022, 4:01 pm UTC
+ * @version February 4, 2022, 10:52 am UTC
  *
  * @property string $name
  */
@@ -42,7 +42,7 @@ class Department extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required|unique'
+        'name' => 'required'
     ];
 
     

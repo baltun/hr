@@ -2,8 +2,8 @@
     {
         "name": "id",
         "dbType": "id",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": true,
@@ -14,8 +14,8 @@
     {
         "name": "name",
         "dbType": "string",
-        "htmlType": "string",
-        "validations": "required|unique",
+        "htmlType": "text",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -26,8 +26,8 @@
     {
         "name": "created_at",
         "dbType": "timestamp",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": false,
@@ -38,8 +38,8 @@
     {
         "name": "updated_at",
         "dbType": "timestamp",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": false,
