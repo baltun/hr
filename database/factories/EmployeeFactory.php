@@ -27,7 +27,7 @@ class EmployeeFactory extends Factory
         'middleName' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s'),
-        'department_id' => $this->faker->word
+        'position_id' => $this->faker->word
         ];
     }
 }

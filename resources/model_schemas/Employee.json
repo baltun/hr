@@ -72,9 +72,9 @@
         "inView": true
     },
     {
-        "name": "department_id",
-        "dbType": "biginteger:unsigned:nullable:foreign,departments,id",
+        "name": "position_id",
+        "dbType": "biginteger:unsigned:nullable:foreign,positions,id",
         "htmlType": "text",
-        "relation": "mt1,Department,department_id,id"
+        "relation": "mt1,Position,position_id,id"
     }
 ]

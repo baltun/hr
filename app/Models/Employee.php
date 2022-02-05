@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Employee
  * @package App\Models
- * @version February 4, 2022, 5:25 pm UTC
+ * @version February 4, 2022, 11:33 pm UTC
  *
- * @property \App\Models\Department $department
+ * @property \App\Models\Position $position
  * @property string $lastName
  * @property string $firstName
  * @property string $middleName
- * @property integer $department_id
+ * @property integer $position_id
  */
 class Employee extends Model
 {
@@ -31,7 +31,7 @@ class Employee extends Model
         'lastName',
         'firstName',
         'middleName',
-        'department_id'
+        'position_id'
     ];
 
     /**
@@ -43,7 +43,7 @@ class Employee extends Model
         'lastName' => 'string',
         'firstName' => 'string',
         'middleName' => 'string',
-        'department_id' => 'integer'
+        'position_id' => 'integer'
     ];
 
     /**
@@ -58,8 +58,8 @@ class Employee extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function department()
+    public function position()
     {
-        return $this->belongsTo(\App\Models\Department::class, 'department_id', 'id');
+        return $this->belongsTo(\App\Models\Position::class, 'position_id', 'id');
     }
 }

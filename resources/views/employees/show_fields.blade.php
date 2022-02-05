@@ -28,9 +28,9 @@
     <p>{{ $employee->updated_at }}</p>
 </div>
 
-<!-- Department Id Field -->
+<!-- Position Id Field -->
 <div class="form-group">
-    {!! Form::label('department_id', 'Department Id:') !!}
-    <p>{{ $employee->department_id }}</p>
+    {!! Form::label('position_id', 'Position Id:') !!}
+    <p>{{ $employee->position_id }}</p>
 </div>
 

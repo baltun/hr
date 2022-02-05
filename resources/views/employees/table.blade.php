@@ -5,7 +5,7 @@
                 <th>Lastname</th>
         <th>Firstname</th>
         <th>Middlename</th>
-        <th>Department Id</th>
+        <th>Position Id</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -15,7 +15,7 @@
                 <td>{{ $employee->lastName }}</td>
             <td>{{ $employee->firstName }}</td>
             <td>{{ $employee->middleName }}</td>
-            <td>{{ $employee->department_id }}</td>
+            <td>{{ $employee->position_id }}</td>
                 <td>
                     {!! Form::open(['route' => ['employees.destroy', $employee->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
