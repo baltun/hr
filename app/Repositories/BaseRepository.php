@@ -123,6 +123,11 @@ abstract class BaseRepository
         return $query->get($columns);
     }
 
+    public function allNames()
+    {
+        return $this->all()->pluck('name', 'id');
+    }
+
     /**
      * Create model record
      *

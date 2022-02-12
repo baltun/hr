@@ -5,8 +5,9 @@ namespace App\Services;
 
 use App\DTO\DepartmentDTO;
 use App\Entities\Department;
-use App\Interfaces\DepartmentRepositoryInterface;
+use App\Interfaces\RepositoryInterfaces\DepartmentRepositoryInterface;
 use App\Interfaces\DepartmentServiceInterface;
+use App\Repositories\DepartmentRepository;
 
 class DepartmentService implements DepartmentServiceInterface
 {
@@ -38,5 +39,12 @@ class DepartmentService implements DepartmentServiceInterface
     public function removeById(int $id)
     {
 
+    }
+
+    public function getNames()
+    {
+        $departmentNames = $this->departmentRepository->allNames();
+
+        return $departmentNames;
     }
 }

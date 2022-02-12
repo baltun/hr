@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\RepositoryInterfaces\DepartmentRepositoryInterface;
 use App\Models\Department;
 use App\Repositories\BaseRepository;
 
@@ -11,7 +12,7 @@ use App\Repositories\BaseRepository;
  * @version February 4, 2022, 10:52 am UTC
 */
 
-class DepartmentRepository extends BaseRepository
+class DepartmentRepository extends BaseRepository implements DepartmentRepositoryInterface
 {
     /**
      * @var array

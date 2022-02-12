@@ -23,7 +23,7 @@ class Employee extends Model
     use HasFactory;
 
     public $table = 'employees';
-    
+
 
 
 
@@ -52,7 +52,7 @@ class Employee extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     /**
@@ -61,5 +61,10 @@ class Employee extends Model
     public function position()
     {
         return $this->belongsTo(\App\Models\Position::class, 'position_id', 'id');
+    }
+
+    public function departments()
+    {
+        return $this->belongsToMany(\App\Models\Department::class);
     }
 }

@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use App\Interfaces\DepartmentServiceInterface;
+use App\Interfaces\PositionServiceInterface;
+use App\Repositories\DepartmentRepository;
 use App\Repositories\EmployeeRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Services\DepartmentService;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -40,9 +44,15 @@ class EmployeeController extends AppBaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(DepartmentServiceInterface $departmentService, PositionServiceInterface $positionService)
     {
-        return view('employees.create');
+        $departments = $departmentService->getNames();
+        $positions = $positionService->getNames();
+
+        return view('employees.create', [
+            'departments' => $departments,
+            'positions' => $positions,
+        ]);
     }
 
     /**
@@ -55,7 +65,6 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
-
         $employee = $this->employeeRepository->create($input);
 
         Flash::success('Employee saved successfully.');
@@ -90,7 +99,7 @@ class EmployeeController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(DepartmentService $departmentService, $id)
     {
         $employee = $this->employeeRepository->find($id);
 
@@ -100,7 +109,10 @@ class EmployeeController extends AppBaseController
             return redirect(route('employees.index'));
         }
 
-        return view('employees.edit')->with('employee', $employee);
+        return view('employees.edit', [
+            'employee' => $employee,
+            'departments' => $departmentService->getNames(),
+        ]);
     }
 
     /**

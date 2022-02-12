@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 use App\DTO\DepartmentDTO;
 use App\Entities\Department;
-use App\Interfaces\DepartmentRepositoryInterface;
+use App\Interfaces\RepositoryInterfaces\DepartmentRepositoryInterface;
 use App\Models\DepartmentModel;
 
 class EloquentDepartmentRepository implements DepartmentRepositoryInterface
@@ -38,10 +38,4 @@ class EloquentDepartmentRepository implements DepartmentRepositoryInterface
 
     }
 
-    private function fillDepartmentDTO(DepartmentModel $departmentModel)
-    {
-        $departmentDTO = new DepartmentDTO();
-        $departmentDTO->id = $departmentModel->id;
-        $departmentDTO->name = $departmentModel->name;
-    }
 }

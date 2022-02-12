@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Interfaces\RepositoryInterfaces\DepartmentRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
 class DepartmentServiceTest extends TestCase

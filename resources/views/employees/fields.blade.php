@@ -19,13 +19,13 @@
 <!-- Position Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('position_id', 'Position Id:') !!}
-    {!! Form::text('position_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('position_id', $positions, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Departments Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('department_ids', 'Departments:') !!}
-    {!! Form::text('department_ids', null, ['class' => 'form-control']) !!}
+    {!! Form::select('department_ids[]', $departments , null , ['class' => 'form-control select2', 'multiple' => 'multiple']) !!}
 </div>
 
 <!-- Submit Field -->

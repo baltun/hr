@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\RepositoryInterfaces\PositionRepositoryInterface;
 use App\Models\Position;
 use App\Repositories\BaseRepository;
 
@@ -11,7 +12,7 @@ use App\Repositories\BaseRepository;
  * @version February 4, 2022, 3:13 pm UTC
 */
 
-class PositionRepository extends BaseRepository
+class PositionRepository extends BaseRepository implements PositionRepositoryInterface
 {
     /**
      * @var array

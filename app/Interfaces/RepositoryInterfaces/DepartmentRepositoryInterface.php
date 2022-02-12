@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces;
+namespace App\Interfaces\RepositoryInterfaces;
 
 use App\DTO\DepartmentDTO;
 
