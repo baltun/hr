@@ -34,3 +34,9 @@
     <p>{{ $employee->position_id }}</p>
 </div>
 
+<!-- Departments Field -->
+<div class="form-group">
+    {!! Form::label('departments', 'Departments:') !!}
+    <p>{{ $employee->departments }}</p>
+</div>
+
