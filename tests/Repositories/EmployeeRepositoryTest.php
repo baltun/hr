@@ -1,6 +1,8 @@
 <?php namespace Tests\Repositories;
 
+use App\Models\Department;
 use App\Models\Employee;
+use App\Models\Position;
 use App\Repositories\EmployeeRepository;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
@@ -26,8 +28,12 @@ class EmployeeRepositoryTest extends TestCase
      */
     public function test_create_employee()
     {
-        $employee = Employee::factory()->make()->toArray();
-
+//        $position = Position::factory()->make();
+        $employee = Employee::factory()
+            ->for(Position::factory())
+            ->has(Department::factory()->count(3))
+            ->make();
+        var_dump($employee);
         $createdEmployee = $this->employeeRepo->create($employee);
 
         $createdEmployee = $createdEmployee->toArray();
