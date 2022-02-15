@@ -31,7 +31,7 @@ class Employee extends Model
         'lastName',
         'firstName',
         'middleName',
-        'position_id'
+//        'position_id'
     ];
 
     /**
@@ -43,7 +43,7 @@ class Employee extends Model
         'lastName' => 'string',
         'firstName' => 'string',
         'middleName' => 'string',
-        'position_id' => 'integer'
+//        'position_id' => 'integer'
     ];
 
     /**
@@ -65,6 +65,6 @@ class Employee extends Model
 
     public function departments()
     {
-        return $this->belongsToMany(\App\Models\Department::class);
+        return $this->belongsToMany(\App\Models\Department::class, 'employee_department');
     }
 }

@@ -13,7 +13,7 @@ class CreateEmployeesDepartments extends Migration
      */
     public function up()
     {
-        Schema::create('employees_departments', function (Blueprint $table) {
+        Schema::create('employee_department', function (Blueprint $table) {
             $table->id();
             $table->integer('employee_id');
             $table->integer('department_id');
