@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\PositionManagement;
 
 use App\Interfaces\RepositoryInterfaces\PositionRepositoryInterface;
 use App\Interfaces\PositionServiceInterface;

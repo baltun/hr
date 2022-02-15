@@ -9,7 +9,7 @@ use App\Interfaces\PositionServiceInterface;
 use App\Repositories\DepartmentRepository;
 use App\Repositories\EmployeeRepository;
 use App\Http\Controllers\AppBaseController;
-use App\Services\DepartmentService;
+use App\Services\DepartmentManagement\DepartmentService;
 use Illuminate\Http\Request;
 use Flash;
 use Response;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Services;
+namespace App\Services\DepartmentManagement;
 
 use App\DTO\DepartmentDTO;
 use App\Entities\Department;

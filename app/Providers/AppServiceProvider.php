@@ -9,8 +9,8 @@ use App\Interfaces\DepartmentServiceInterface;
 use App\Repositories\DepartmentRepository;
 use App\Repositories\EloquentDepartmentRepository;
 use App\Repositories\PositionRepository;
-use App\Services\DepartmentService;
-use App\Services\PositionService;
+use App\Services\DepartmentManagement\DepartmentService;
+use App\Services\PositionManagement\PositionService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
