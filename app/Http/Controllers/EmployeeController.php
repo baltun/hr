@@ -99,7 +99,7 @@ class EmployeeController extends AppBaseController
      *
      * @return Response
      */
-    public function edit(DepartmentService $departmentService, $id)
+    public function edit(DepartmentService $departmentService, PositionServiceInterface $positionService, $id)
     {
         $employee = $this->employeeRepository->find($id);
 
@@ -110,6 +110,7 @@ class EmployeeController extends AppBaseController
         }
 
         return view('employees.edit', [
+            'positions' => $positionService->getNames(),
             'employee' => $employee,
             'departments' => $departmentService->getNames(),
         ]);
