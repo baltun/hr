@@ -3,5 +3,8 @@
             <div class="row">
                 What a beautiful mail!
             </div>
+            <div class="row">
+                {{$messageText}}
+            </div>
         </div>
     </div>

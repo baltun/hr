@@ -11,14 +11,16 @@ class BeautifullMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $messageText;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($messageText)
     {
-        //
+        $this->messageText = $messageText;
     }
 
     /**
@@ -28,6 +30,6 @@ class BeautifullMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.beautiful_mail');
+        return $this->view('mail.beautiful_mail', ['messageText', $this->messageText]);
     }
 }
