@@ -8,8 +8,6 @@ class Email
     private $emailAddress;
     private $messageText;
 
-    private $emailRepo;
-
     public function __construct($emailAddress, $messageText)
     {
         $this->emailAddress = $emailAddress;

@@ -30,6 +30,6 @@ class BeautifullMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.beautiful_mail', ['messageText', $this->messageText]);
+        return $this->view('mail.beautiful_mail', ['messageText' => $this->messageText]);
     }
 }
