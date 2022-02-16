@@ -10,8 +10,8 @@ class SendTextToEmailController extends Controller
 {
     public function __invoke(Request $request, SendService $sendService, EmailDTO $emailDTO)
     {
-        $emailDTO->email = $request->email;
-        $emailDTO->text = $request->text;
+        $emailDTO->emailAddress = $request->email;
+        $emailDTO->messageText = $request->text;
 
 //        $sendService = new SendService();
         $sendService->send($emailDTO);

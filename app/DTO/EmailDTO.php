@@ -4,6 +4,6 @@ namespace App\DTO;
 
 class EmailDTO
 {
-    public $email;
-    public $text;
+    public $emailAddress;
+    public $messageText;
 }

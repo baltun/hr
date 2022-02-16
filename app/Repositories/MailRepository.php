@@ -2,15 +2,15 @@
 
 namespace App\Repositories;
 
-use App\DTO\EmailDTO;
+use App\Entities\Email;
 use App\Mail\BeautifullMail;
 use Illuminate\Support\Facades\Mail;
 
 class MailRepository
 {
 
-    public function send(EmailDTO $emailDTO)
+    public function send(Email $email)
     {
-        Mail::to('ivkol@mail.ru')->send(new BeautifullMail());
+        Mail::to($email->getEmailAddress())->send(new BeautifullMail($email->getMessageText()));
     }
 }

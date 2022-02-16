@@ -2,22 +2,25 @@
 
 namespace App\Entities;
 
-use App\DTO\EmailDTO;
-use App\Interfaces\RepositoryInterfaces\EmailRepositoryInterface;
 
 class Email
 {
-    private $email;
-    private $text;
+    private $emailAddress;
+    private $messageText;
 
-    public function __construct(EmailDTO $emailDTO)
+    public function __construct($emailAddress, $messageText)
     {
-        $this->email = $emailDTO->email;
-        $this->text = $emailDTO->text;
+        $this->emailAddress = $emailAddress;
+        $this->messageText = $messageText;
     }
 
-    public function send(EmailRepositoryInterface $emailRepository)
+    public function getEmailAddress()
     {
-        $emailRepository->send();
+        return $this->emailAddress;
+    }
+
+    public function getMessageText()
+    {
+        return $this->messageText;
     }
 }
