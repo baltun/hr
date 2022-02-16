@@ -12,8 +12,10 @@ class Email
 
     public function __construct(EmailDTO $emailDTO)
     {
-        $this->email = $emailDTO->email;
-        $this->text = $emailDTO->text;
+        $this->email = $emailDTO->emailAddress;
+        $this->text = $emailDTO->messageText;
+
+        $this->emailRepo = $emailRepository;
     }
 
     public function send(EmailRepositoryInterface $emailRepository)
