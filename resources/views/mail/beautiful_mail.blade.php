@@ -1,11 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
     <div class="container-fluid">
         <div class="animated fadeIn">
-             <div class="row">
-
+            <div class="row">
+                What a beautiful mail!
             </div>
         </div>
     </div>
-@endsection

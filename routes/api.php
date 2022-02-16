@@ -27,3 +27,5 @@ Route::resource('positions', App\Http\Controllers\API\PositionAPIController::cla
 
 
 Route::resource('employees', App\Http\Controllers\API\EmployeeAPIController::class);
+
+Route::get('email', \App\Http\Controllers\SendTextToEmailController::class);

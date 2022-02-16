@@ -46,4 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('positions', App\Http\Controllers\PositionController::class);
 
     Route::resource('employees', App\Http\Controllers\EmployeeController::class);
+
+    Route::get('email', \App\Http\Controllers\SendTextToEmailController::class);
+
 });
